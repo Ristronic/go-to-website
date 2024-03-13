@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go to Website</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      input[type="text"] {
+        padding: 10px;
+        width: 300px;
+        margin-bottom: 20px;
+      }
+      input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Enter Website URL</h1>
+    <form id="websiteForm" onsubmit="return goToWebsite()">
+      <input type="text" id="websiteUrl" placeholder="Enter website URL" />
+      <br />
+      <input type="submit" value="Go to Website" />
+    </form>
+    <script>
+      function goToWebsite() {
+        var websiteUrl = document.getElementById("websiteUrl").value;
+        if (websiteUrl.trim() !== "") {
+          window.location.href = websiteUrl;
+        }
+        return false;
+      }
+    </script>
+  </body>
+</html>
